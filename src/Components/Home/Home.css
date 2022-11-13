@@ -1,0 +1,47 @@
+.mainContainer {
+  width: 100%;
+}
+.background {
+  margin-top: 20px;
+  height: 100%;
+  width: 100%;
+}
+.textBlock {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  left: 10%;
+  top: 40%;
+  width: 50%;
+}
+
+.textBlock > h1 {
+  font: normal normal 800 100px/122px Montserrat;
+}
+.textBlock > p {
+  max-width:576px;
+  font: normal normal 800 30px/40px Montserrat;
+}
+
+.greenLine {
+  width: 96px;
+  border: 16px solid var(--unnamed-color-b4ff00);
+}
+
+@media screen and (max-width: 600px) {
+  .greenLine {
+    max-width: 48px;
+    border: 8px solid var(--unnamed-color-b4ff00);
+  }
+  .textBlock {
+    width: 80%;
+  }
+  .textBlock > h1 {
+    font: normal normal 800 38px/47px Montserrat;
+  }
+  .textBlock > p {
+    max-width: 312px;
+    font: normal normal 800 18px/24px Montserrat;
+  }
+}

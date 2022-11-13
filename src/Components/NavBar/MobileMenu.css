@@ -1,0 +1,124 @@
+.mobileMenuContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  height: var(--doc-height);
+  background: white;
+  width: 100%;
+  gap: 20px;
+}
+
+.mobileMenuHeader {
+  position: fixed;
+  width: 100%;
+  height: 56px;
+  width: 100%;
+  text-align: center;
+  background: black;
+  color: white;
+  font: normal normal 800 18px Montserrat;
+}
+.mobileMenuHeader > h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+.closeMenu {
+  position: absolute;
+  right: 5%;
+  width: 18px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 18px;
+}
+
+.menuOptions {
+  margin-top: 56px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font: normal normal 800 38px/68px Montserrat;
+  gap: 10px;
+}
+
+.menuOptions > a {
+  color: black;
+}
+
+.changeLangMobile {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  font: normal normal bold 18px/22px Montserrat;
+  gap: 10px;
+}
+
+.changeLangMobile > button {
+  padding: 0;
+  border: none;
+  background: none;
+  font: normal normal bold 18px/22px Montserrat;
+  cursor: pointer;
+}
+
+.changeLanguageActiveMobile {
+  color: #000000;
+}
+
+.changeLanguageMobile {
+  color: #858585;
+}
+
+.menuFooter {
+  flex: 1 1 auto;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #4b00ff;
+  color: white;
+  gap: 30px;
+}
+
+.menuFooter > p {
+  text-align: center;
+  font: normal normal 800 18px/22px Montserrat;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.menuFooter > hr {
+  width: 80%;
+  border-bottom: 2px solid #ffffff;
+  opacity: 0.5;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.contact > p {
+  text-align: left;
+  font: normal normal medium 14px/18px Montserrat;
+}

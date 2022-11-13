@@ -1,0 +1,115 @@
+.containerAboutUs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 50px;
+  margin-top: 100px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+.textBlockColumn1 {
+  max-width: 456px;
+  margin: auto;
+}
+
+.textBlockColumn1 > p {
+  font: normal normal normal 18px/26px Montserrat;
+  margin-bottom: 20px;
+}
+
+.textBlockColumn1 > h4 {
+  font: normal normal bold 16px/19px Montserrat;
+  color: #cfcfcf;
+}
+
+.textBlockColumn1 > h2 {
+  font: normal normal 800 32px/39px Montserrat;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.textBlockColumn2 {
+  max-width: 456px;
+  margin: auto;
+}
+
+.textBlockColumn2 > p {
+  font: normal normal normal 18px/26px Montserrat;
+  margin-bottom: 20px;
+}
+
+.textBlockColumn2 > h4 {
+  font: normal normal bold 16px/19px Montserrat;
+  color: #cfcfcf;
+}
+
+.textBlockColumn2 > h2 {
+  font: normal normal 800 32px/39px Montserrat;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.photo1 {
+  margin: auto;
+  width: 100%;
+  height: 368px;
+}
+
+.photo2 {
+  margin: auto;
+  max-width: 312px;
+  max-height: 300px;
+  transition: transform 0.5s ease-in-out;
+}
+.photo2:hover {
+  transform: rotate(360deg);
+}
+
+.searchBtn {
+  width: 240px;
+  height: 56px;
+  font: normal normal 800 18px/22px Montserrat;
+  color: white;
+  background: #4b00ff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000066;
+  border-radius: 42px;
+}
+
+.searchBtn:hover {
+  background: #3700b6 0% 0% no-repeat padding-box;
+}
+
+@media screen and (max-width: 1024px) {
+  .containerAboutUs {
+    margin-top: 5px;
+    grid-gap: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .photo1 {
+    grid-column: 1/-1;
+    grid-row: 1;
+    width: 100%;
+    height: 60%;
+  }
+
+  .textBlockColumn1 {
+    grid-column: 1/-1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+  }
+  .textBlockColumn1 {
+    grid-column: 1/-1;
+    grid-row: 4;
+    width: 100%;
+    height: 100%;
+  }
+
+  .photo2 {
+    grid-column: 1/-1;
+    grid-row: 3;
+    max-width: 312px;
+    max-height: 300px;
+  }
+}

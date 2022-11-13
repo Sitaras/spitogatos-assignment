@@ -1,0 +1,126 @@
+header {
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  background: black;
+  color: white;
+  font: normal normal 800 18px Montserrat;
+  z-index: 100;
+}
+
+.headerContainer {
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logoContainer {
+  flex: 1 1 33%;
+}
+
+.logo {
+  position: absolute;
+  top: 26px;
+  left: 72px;
+  width: 72px;
+  height: 72px;
+  z-index: 5;
+}
+
+.navigation {
+  display: flex;
+  flex: 1 1 33%;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  white-space: nowrap;
+}
+
+.navigation > a {
+  color: white;
+}
+.navigation > a:hover {
+  color: #b4ff00;
+}
+
+.navigation > .activeTab {
+  color: #b4ff00;
+  text-decoration: underline;
+  text-decoration-color: #b4ff00;
+  text-decoration-thickness: 8px;
+  text-underline-position: under;
+  text-underline-offset: 100%;
+}
+
+.changeLangAndSearch {
+  flex: 1 1 33%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding-right: 72px;
+}
+
+.changeLang {
+  display: flex;
+  gap: 10px;
+}
+
+.changeLang > button {
+  padding: 0;
+  border: none;
+  background: none;
+  font: normal normal bold 22px/27px Montserrat;
+  cursor: pointer;
+}
+
+.changeLanguageActive {
+  color: white;
+}
+
+.changeLanguage {
+  color: #858585;
+}
+
+.searchLogo {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  justify-self: center;
+  color: white;
+}
+
+.menuLogo {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  justify-self: flex-end;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1224px) {
+  header {
+    font-size: 12px;
+    height: 56px;
+  }
+  .changeLangAndSearch {
+    padding-right: 5%;
+  }
+  .changeLang > button {
+    font-size: 14px;
+  }
+  .logo {
+    position: absolute;
+    top: 20%;
+    left: 10px;
+    width: 35px;
+    height: 35px;
+  }
+  .searchLogo {
+    justify-self: flex-end;
+  }
+}
