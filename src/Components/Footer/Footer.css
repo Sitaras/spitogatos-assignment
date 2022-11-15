@@ -1,0 +1,57 @@
+footer {
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+  bottom: 0;
+  height: 48px;
+  width: 100%;
+}
+
+.copyrightContainer {
+  flex: 1 1 33%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 72px;
+}
+.copyright {
+  font: normal normal medium 16px/19px Montserrat;
+}
+
+.cookies {
+  flex: 1 1 33%;
+  font: normal normal 800 18px/22px Montserrat;
+}
+
+.logoFooterContainer {
+  flex: 1 1 33%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 32px;
+}
+.logoFooter {
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (max-width: 1024px) {
+  .copyright {
+    font-size: 10px;
+  }
+  .logoFooter {
+    width: 24px;
+    height: 24px;
+  }
+
+  .copyrightContainer {
+    flex: 1 1 50%;
+    padding-left: 24px;
+  }
+  .logoFooterContainer {
+    flex: 1 1 50%;
+    padding-right: 24px;
+  }
+}

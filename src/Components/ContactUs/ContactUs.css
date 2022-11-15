@@ -1,0 +1,123 @@
+.autoScreens {
+  height: var(--doc-height);
+}
+.containerContact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 100%;
+}
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+  width: 100%;
+  background-color: #f8f8f8;
+  height: 100%;
+  padding: 10%;
+  gap: 10px;
+}
+
+.textField {
+  width: 100%;
+}
+
+.textField > p {
+  margin-top: 10px;
+  margin-right: 15px;
+  text-align: right;
+  font: normal normal normal 12px/15px Montserrat;
+  letter-spacing: 0px;
+  color: black;
+}
+
+.selects {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.select1 {
+  width: 80%;
+}
+.select2 {
+  width: 80%;
+}
+
+.form > h2 {
+  margin-right: auto;
+  font: normal normal 800 32px/39px Montserrat;
+}
+.form > h4 {
+  font: normal normal normal 18px/26px Montserrat;
+  color: black;
+}
+.form > p {
+  font: normal normal normal 16px/16px Montserrat;
+  color: black;
+}
+
+.checkboxContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+.checkboxContainer > p {
+  text-align: left;
+  font: normal normal normal 16px/16px Montserrat;
+  color: black;
+}
+
+.checkboxes {
+  display:flex;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 1024px) {
+  .containerContact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    grid-template-rows: 1fr 296px;
+  }
+
+  .autoScreens {
+    height: auto;
+  }
+  .form {
+    grid-column: 1/-1;
+    grid-row: 1;
+    padding: 5%;
+  }
+  .selects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .select1 {
+    width: 100%;
+  }
+  .select2 {
+    width: 100%;
+  }
+
+  .mapContainer {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+}

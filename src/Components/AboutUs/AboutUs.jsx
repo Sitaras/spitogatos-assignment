@@ -5,7 +5,7 @@ import Picture2 from "../../imgs/Picture2.png";
 
 function AboutUs() {
   return (
-    <section id="aboutus">
+    <section id="aboutus" className="autoScreens">
       <div className="containerAboutUs">
         <img src={Picture1} alt="photoshooter" className="photo1" />
         <div className="textBlockColumn1">

@@ -4,6 +4,8 @@ import NavBar from "./Components/NavBar/NavBar";
 import Home from "./Components/Home/Home";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import MobileMenu from "./Components/NavBar/MobileMenu";
+import ContactUs from "./Components/ContactUs/ContactUs";
+import Footer from "./Components/Footer/Footer";
 import { useStateContext } from "./Contexts/ContextProvider";
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
         <NavBar />
         <Home />
         <AboutUs />
+        <ContactUs />
+        <Footer/>
       </MobileMenu>
     </>
   );

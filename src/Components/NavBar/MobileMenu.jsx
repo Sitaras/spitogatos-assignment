@@ -24,7 +24,7 @@ function MobileMenu({ children }) {
       ) : (
         <div className="mobileMenuContainer">
           <div className="mobileMenuHeader">
-            <h1 style={{marginTop: "auto"}}>MENU</h1>
+            <h1 style={{ marginTop: "auto" }}>MENU</h1>
             <img
               src={CloseButton}
               alt="closeMenu"
@@ -76,38 +76,41 @@ function MobileMenu({ children }) {
             </a>
             <a
               href="#contact"
-              onClick={() => setActiveNav("#contact")}
+              onClick={() => {
+                setOpenMobileMenu(false);
+                setActiveNav("#contact");
+              }}
               className={activeNav === "#contact" ? "activeTab" : ""}
             >
               Contact
             </a>
-          <div className="changeLangMobile">
-            <button
-              className={
-                activeENGR === "EN"
-                  ? "changeLanguageActiveMobile"
-                  : "changeLanguageMobile"
-              }
-              onClick={() => {
-                setActiveENGR("EN");
-              }}
-            >
-              EN
-            </button>
-            <p style={{ color: "#CFCFCF" }}>|</p>
-            <button
-              className={
-                activeENGR === "GR"
-                  ? "changeLanguageActiveMobile"
-                  : "changeLanguageMobile"
-              }
-              onClick={() => {
-                setActiveENGR("GR");
-              }}
-            >
-              GR
-            </button>
-          </div>
+            <div className="changeLangMobile">
+              <button
+                className={
+                  activeENGR === "EN"
+                    ? "changeLanguageActiveMobile"
+                    : "changeLanguageMobile"
+                }
+                onClick={() => {
+                  setActiveENGR("EN");
+                }}
+              >
+                EN
+              </button>
+              <p style={{ color: "#CFCFCF" }}>|</p>
+              <button
+                className={
+                  activeENGR === "GR"
+                    ? "changeLanguageActiveMobile"
+                    : "changeLanguageMobile"
+                }
+                onClick={() => {
+                  setActiveENGR("GR");
+                }}
+              >
+                GR
+              </button>
+            </div>
           </div>
           <div className="menuFooter">
             <div className="socials">

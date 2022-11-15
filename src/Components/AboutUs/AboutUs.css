@@ -1,3 +1,8 @@
+.autoScreens {
+  height: auto;
+  min-height: var(--doc-height);
+}
+
 .containerAboutUs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -6,6 +11,7 @@
   margin-top: 100px;
   padding-left: 200px;
   padding-right: 200px;
+  height: 100%;
 }
 .textBlockColumn1 {
   max-width: 456px;
@@ -62,24 +68,13 @@
   transition: transform 0.5s ease-in-out;
 }
 .photo2:hover {
-  transform: rotate(360deg);
-}
-
-.searchBtn {
-  width: 240px;
-  height: 56px;
-  font: normal normal 800 18px/22px Montserrat;
-  color: white;
-  background: #4b00ff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000066;
-  border-radius: 42px;
-}
-
-.searchBtn:hover {
-  background: #3700b6 0% 0% no-repeat padding-box;
+  transform: rotate(180deg);
 }
 
 @media screen and (max-width: 1024px) {
+  .autoScreens {
+    height: auto;
+  }
   .containerAboutUs {
     margin-top: 5px;
     grid-gap: 0;
@@ -96,13 +91,13 @@
   .textBlockColumn1 {
     grid-column: 1/-1;
     grid-row: 2;
-    width: 100%;
+    max-width: 456px;
     height: 100%;
   }
-  .textBlockColumn1 {
+  .textBlockColumn2 {
     grid-column: 1/-1;
     grid-row: 4;
-    width: 100%;
+    max-width: 456px;
     height: 100%;
   }
 
