@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MobileMenu.css";
-import { useStateContext } from "../../Contexts/ContextProvider";
-import CloseButton from "../../imgs/CloseButton.svg";
-import Facebook from "../../imgs/facebook.svg";
-import Instagram from "../../imgs/instagram.svg";
-import Twitter from "../../imgs/twitter.svg";
-import World from "../../imgs/world.svg";
+import { useStateContext } from "../../../Contexts/ContextProvider";
+import CloseButton from "../../../imgs/CloseButton.svg";
+import Facebook from "../../../imgs/facebook.svg";
+import Instagram from "../../../imgs/instagram.svg";
+import Twitter from "../../../imgs/twitter.svg";
+import World from "../../../imgs/world.svg";
 
-function MobileMenu({ children }) {
+function MobileMenu() {
   const {
-    openMobileMenu,
     setOpenMobileMenu,
     activeNav,
     setActiveNav,
@@ -19,9 +18,7 @@ function MobileMenu({ children }) {
 
   return (
     <>
-      {!openMobileMenu ? (
-        children
-      ) : (
+      <section className="mobileMenuSection">
         <div className="mobileMenuContainer">
           <div className="mobileMenuHeader">
             <h1 style={{ marginTop: "auto" }}>MENU</h1>
@@ -128,7 +125,7 @@ function MobileMenu({ children }) {
             </div>
           </div>
         </div>
-      )}
+      </section>
     </>
   );
 }

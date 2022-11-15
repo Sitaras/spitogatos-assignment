@@ -13,6 +13,7 @@ function NavBar() {
     setActiveNav,
     activeENGR,
     setActiveENGR,
+    setSearch,
   } = useStateContext();
 
   return (
@@ -99,7 +100,12 @@ function NavBar() {
                 </button>
               </div>
             ) : null}
-            <img src={Search} alt="Search" className="searchLogo" />
+            <img
+              src={Search}
+              alt="Search"
+              className="searchLogo"
+              onClick={() => setSearch(true)}
+            />
             {!desktopMenu ? (
               <img
                 src={Menu}

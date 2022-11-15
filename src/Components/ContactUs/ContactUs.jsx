@@ -81,7 +81,7 @@ function ContactUs() {
   const handleForm = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.name,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -144,7 +144,16 @@ function ContactUs() {
               label="Full Name"
               required
               sx={{ width: "100%" }}
-              onChange={handleForm}
+              value={formData.name}
+              onChange={(e) => {
+                // only letters allowed
+                const regex = /^[a-zA-Z]+$/;
+                const value = e.target.value;
+                if (value !== "" && !regex.test(value)) {
+                  return;
+                }
+                handleForm(e);
+              }}
               onBlur={validateFields}
               error={errorMessages.name !== ""}
             />
@@ -164,6 +173,7 @@ function ContactUs() {
               label="Email"
               required
               sx={{ width: "100%" }}
+              value={formData.email}
               onChange={handleForm}
               onBlur={validateFields}
               error={errorMessages.email !== ""}
@@ -184,7 +194,16 @@ function ContactUs() {
               sx={{ width: "100%" }}
               label="Phone"
               required
-              onChange={handleForm}
+              value={formData.phone}
+              onChange={(e) => {
+                // only numbers allowed
+                const regex = /^[0-9]+$/;
+                const value = e.target.value;
+                if (value !== "" && !regex.test(value)) {
+                  return;
+                }
+                handleForm(e);
+              }}
               onBlur={validateFields}
               error={errorMessages.phone !== ""}
             />
@@ -231,10 +250,12 @@ function ContactUs() {
               label="Message"
               multiline
               rows={5}
+              value={formData.message}
               onChange={handleForm}
               onBlur={validateFields}
+              inputProps={{ maxLength: 100 }}
             />
-            <p>{500 - formData.message.length}</p>
+            <p>{100 - formData.message.length}</p>
           </div>
           <div className="checkboxContainer">
             <p>Please select at least one of the following:</p>

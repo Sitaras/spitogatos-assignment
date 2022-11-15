@@ -1,0 +1,35 @@
+.containerSearch {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: center;
+  align-items: left;
+  padding-left: 20%;
+  padding-top: 15%;
+  height: 100%;
+}
+
+.closeSearch {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  cursor: pointer;
+}
+
+.customInput::placeholder,
+.customInput[type="text"] {
+  margin: auto;
+  text-align: left;
+  font: normal normal 800 100px/140px Montserrat;
+}
+
+.customInput {
+  text-decoration: underline;
+  text-decoration-color: #b4ff00;
+  text-decoration-thickness: 20px;
+  text-underline-position: under;
+}
+
+.innerContainer {
+  flex: 1 1 50%;
+}

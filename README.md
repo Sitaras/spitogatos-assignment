@@ -1,3 +1,16 @@
+# Notes
+
+ - Only three Tabs are working (scroll functionality): Main One, About Us and Contact.
+
+ - Fully responsive for all devices.
+
+ - Mockups :
+    - Desktop:
+    https://xd.adobe.com/view/1b0dc640-6cb6-4b78-4968-d4cedbeac66b-6d3c/
+    - Mobile:
+    https://xd.adobe.com/view/49a28bfd-8494-4a09-71ef-b66c39a35625-3f93/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

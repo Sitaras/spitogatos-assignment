@@ -91,6 +91,7 @@ header {
   height: 24px;
   justify-self: center;
   color: white;
+  cursor: pointer;
 }
 
 .menuLogo {

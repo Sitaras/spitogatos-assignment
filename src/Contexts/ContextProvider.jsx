@@ -8,6 +8,7 @@ export const ContextProvider = ({ children }) => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const [activeNav, setActiveNav] = useState("#mainone");
   const [activeENGR, setActiveENGR] = useState("EN");
+  const [search, setSearch] = useState(false);
 
   return (
     <StateContext.Provider
@@ -17,11 +18,13 @@ export const ContextProvider = ({ children }) => {
         screenSize,
         openMobileMenu,
         activeENGR,
+        search,
         setActiveNav,
         setDesktopMenu,
         setScreenSize,
         setOpenMobileMenu,
         setActiveENGR,
+        setSearch,
       }}
     >
       {children}
