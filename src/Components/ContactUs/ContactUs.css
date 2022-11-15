@@ -1,5 +1,5 @@
 .autoScreens {
-  height: var(--doc-height);
+  min-height: auto;
 }
 .containerContact {
   display: grid;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ContactUs.css";
 import Map from "../../imgs/Map.png";
 import { styled } from "@mui/material/styles";
-import { Checkbox, FormControlLabel, TextField } from "@mui/material";
+import { Checkbox, FormControlLabel, TextField, MenuItem } from "@mui/material";
 
 const CssTextField = styled(TextField)({
   "& .MuiInputBase-root": {
@@ -56,6 +56,8 @@ function ContactUs() {
     category: "",
     subCategory: "",
     message: "",
+    option1: false,
+    option2: false,
   });
 
   const [errorMessages, setErrorMessages] = useState({
@@ -87,8 +89,6 @@ function ContactUs() {
     let validRegex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@spitogatos.gr$/;
 
-    console.log(email);
-    console.log(!!email.toLowerCase().match(validRegex));
     return !!email.toLowerCase().match(validRegex);
   }
 
@@ -113,6 +113,19 @@ function ContactUs() {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      error.name ||
+      error.email ||
+      error.phone ||
+      (!formData.option1 && !formData.option2)
+    ) {
+      alert("Empty or incorrect fields!");
+    }
+    console.log(formData);
+  };
+
   return (
     <section id="contact" className="autoScreens">
       <div className="containerContact">
@@ -131,10 +144,19 @@ function ContactUs() {
               label="Full Name"
               required
               sx={{ width: "100%" }}
+              onChange={handleForm}
               onBlur={validateFields}
-              error={errorMessages.name === "Empty Field"}
+              error={errorMessages.name !== ""}
             />
-            <p>This field is required</p>
+            {errorMessages.name === "" ? (
+              formData.email.length > 0 ? (
+                <p>Help Text</p>
+              ) : (
+                <p>This field is required</p>
+              )
+            ) : (
+              <p style={{ color: "red" }}>{errorMessages.name}</p>
+            )}
           </div>
           <div className="textField">
             <CssTextField
@@ -142,13 +164,19 @@ function ContactUs() {
               label="Email"
               required
               sx={{ width: "100%" }}
+              onChange={handleForm}
               onBlur={validateFields}
-              error={
-                errorMessages.email === "Empty Field" ||
-                errorMessages.email === "E-mail isn't valid"
-              }
+              error={errorMessages.email !== ""}
             />
-            <p>This field is required</p>
+            {errorMessages.email === "" ? (
+              formData.email.length > 0 ? (
+                <p>Help Text</p>
+              ) : (
+                <p>This field is required</p>
+              )
+            ) : (
+              <p style={{ color: "red" }}>{errorMessages.email}</p>
+            )}
           </div>
           <div className="textField">
             <CssTextField
@@ -156,9 +184,19 @@ function ContactUs() {
               sx={{ width: "100%" }}
               label="Phone"
               required
+              onChange={handleForm}
               onBlur={validateFields}
+              error={errorMessages.phone !== ""}
             />
-            <p>This field is required</p>
+            {errorMessages.phone === "" ? (
+              formData.phone.length > 0 ? (
+                <p>Help Text</p>
+              ) : (
+                <p>This field is required</p>
+              )
+            ) : (
+              <p style={{ color: "red" }}>{errorMessages.phone}</p>
+            )}
           </div>
           <div className="selects">
             <CssTextField
@@ -166,15 +204,25 @@ function ContactUs() {
               sx={{ width: "100%" }}
               select
               label="Category"
+              onChange={handleForm}
               onBlur={validateFields}
-            />
+            >
+              <MenuItem key={0} value={0}>
+                Option 1
+              </MenuItem>
+            </CssTextField>
             <CssTextField
               name="subCategory"
               sx={{ width: "100%" }}
               select
               label="SubCategory"
+              onChange={handleForm}
               onBlur={validateFields}
-            />
+            >
+              <MenuItem key={0} value={0}>
+                Option 1
+              </MenuItem>
+            </CssTextField>
           </div>
           <div className="textField">
             <MessageTextField
@@ -192,16 +240,40 @@ function ContactUs() {
             <p>Please select at least one of the following:</p>
             <div className="checkboxes">
               <FormControlLabel
-                control={<Checkbox defaultChecked />}
+                control={
+                  <Checkbox
+                    name="option1"
+                    value={formData.option1}
+                    onChange={() => {
+                      setFormData({
+                        ...formData,
+                        ["option1"]: !formData.option1,
+                      });
+                    }}
+                  />
+                }
                 label="Option 1"
               />
               <FormControlLabel
-                control={<Checkbox defaultChecked />}
+                control={
+                  <Checkbox
+                    name="option2"
+                    value={formData.option2}
+                    onChange={() => {
+                      setFormData({
+                        ...formData,
+                        ["option2"]: !formData.option2,
+                      });
+                    }}
+                  />
+                }
                 label="Option 2"
               />
             </div>
           </div>
-          <button className="searchBtn">Submit</button>
+          <button className="searchBtn" onClick={handleSubmit}>
+            Submit
+          </button>
         </form>
       </div>
     </section>
