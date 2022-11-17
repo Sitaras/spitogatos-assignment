@@ -7,7 +7,7 @@ function Search() {
   const { setSearch } = useStateContext();
   return (
     <section>
-      <div className="containerSearch">
+      <form className="containerSearch">
         <img
           src={CloseSearch}
           alt="close search"
@@ -15,7 +15,7 @@ function Search() {
           onClick={() => setSearch(false)}
         />
         <div className="innerContainer">
-          <input
+          <input  
             type="text"
             className="customInput"
             placeholder="Start Typing"
@@ -24,7 +24,7 @@ function Search() {
         <div className="innerContainer">
           <button className="searchBtn">Search</button>
         </div>
-      </div>
+      </form>
     </section>
   );
 }

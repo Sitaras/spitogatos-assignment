@@ -186,7 +186,7 @@ function ContactUs() {
         </div>
         <form className="form">
           <h2>Contact Us</h2>
-          <h4>
+          <h4 style={{marginBottom:"20px"}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </h4>
@@ -210,7 +210,7 @@ function ContactUs() {
               error={errorMessages.name !== ""}
             />
             {errorMessages.name === "" ? (
-              formData.email.length > 0 ? (
+              formData.name.length > 0 ? (
                 <p>Help Text</p>
               ) : (
                 <p>This field is required</p>
@@ -256,6 +256,7 @@ function ContactUs() {
                 }
                 handleForm(e);
               }}
+              onBlur={validateFields}
               error={errorMessages.phone !== ""}
             />
             {errorMessages.phone === "" ? (
@@ -268,7 +269,7 @@ function ContactUs() {
               <p style={{ color: "red" }}>{errorMessages.phone}</p>
             )}
           </div>
-          <div className="selects">
+          <div className="dropdowns">
             <CssTextField
               name="category"
               sx={{ width: "100%" }}

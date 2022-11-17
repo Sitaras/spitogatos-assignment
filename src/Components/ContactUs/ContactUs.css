@@ -3,7 +3,7 @@
 }
 .containerContact {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 45% 55%;
   height: 100%;
 }
 
@@ -75,11 +75,12 @@
   color: black;
 }
 
-.selects {
+.dropdowns {
   display: flex;
   justify-content: space-between;
   width: 100%;
   gap: 20px;
+  margin-bottom: 20px;
 }
 
 .select1 {
@@ -140,12 +141,12 @@
     grid-row: 1;
     padding: 5%;
   }
-  .selects {
+  .dropdowns {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 20px;
+    gap: 30px;
   }
 
   .select1 {
