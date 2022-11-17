@@ -56,12 +56,14 @@
 }
 
 .photo1 {
+  object-fit: cover;
   margin: auto;
   width: 100%;
   height: 368px;
 }
 
 .photo2 {
+  object-fit: cover;
   margin: auto;
   max-width: 312px;
   max-height: 300px;

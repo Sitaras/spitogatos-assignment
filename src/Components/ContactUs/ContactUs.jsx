@@ -87,12 +87,12 @@ function ContactUs() {
     let mounted = true;
 
     async function fetchData() {
+      // fetch the options of category and subcategory
       let url = "https://run.mocky.io/v3/0b8fbded-6ce4-4cb2-bf2f-d2c39207506b";
       console.log(url);
       await axios
         .get(url)
         .then((res) => {
-          // do good things
           console.log(res.data);
           if (mounted) {
             let tempOptions = [];
@@ -169,8 +169,9 @@ function ContactUs() {
       (!formData.option1 && !formData.option2)
     ) {
       alert("Empty or incorrect fields!");
+    } else {
+      alert("Submited!");
     }
-    console.log(formData);
   };
 
   return (
@@ -178,6 +179,10 @@ function ContactUs() {
       <div className="containerContact">
         <div className="mapContainer">
           <img src={Map} alt="map" className="map" />
+          <div className="greenDot">
+            <p>S.und@themail.com</p>
+            <p>+30 210 1234 567</p>
+          </div>
         </div>
         <form className="form">
           <h2>Contact Us</h2>
@@ -270,21 +275,22 @@ function ContactUs() {
               select
               label="Category"
               onChange={(e) => {
-                setFormData({
-                  ...formData,
-                  subCategory: subCategoryOptions[
-                    categoryOptions[e.target.value].name
-                  ]
-                    ? subCategoryOptions[
-                        categoryOptions[e.target.value].name
-                      ][0].subCategoryId
-                    : "",
-                });
+                setSelectedCategoryName(
+                  categoryOptions[e.target.value]?.name || ""
+                );
 
-                setSelectedCategoryName(categoryOptions[e.target.value].name);
+                formData.subCategory = subCategoryOptions[
+                  categoryOptions[e.target.value]?.name
+                ]
+                  ? subCategoryOptions[categoryOptions[e.target.value].name][0]
+                      .subCategoryId
+                  : "";
+
+                setFormData(formData);
+
                 handleForm(e);
               }}
-              defaultValue={""}
+              value={formData.category}
             >
               <MenuItem value={""}>{null}</MenuItem>
               {categoryOptions.map((option) => {
@@ -301,11 +307,9 @@ function ContactUs() {
               select
               label="SubCategory"
               onChange={handleForm}
-              defaultValue={""}
-              onBlur={validateFields}
+              value={formData.subCategory}
             >
-              {selectedCategoryName !== "" &&
-              subCategoryOptions[selectedCategoryName] ? (
+              {subCategoryOptions[selectedCategoryName] ? (
                 subCategoryOptions[selectedCategoryName].map((option) => {
                   return (
                     <MenuItem
@@ -317,7 +321,7 @@ function ContactUs() {
                   );
                 })
               ) : (
-                <MenuItem value={""}>{null}</MenuItem>
+                <MenuItem value={formData.subCategory}>{null}</MenuItem>
               )}
             </CssTextField>
           </div>
