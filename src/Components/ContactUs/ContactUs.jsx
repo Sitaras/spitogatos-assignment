@@ -187,7 +187,7 @@ function ContactUs() {
         </div>
         <form className="form">
           <h2>Contact Us</h2>
-          <h4 style={{marginBottom:"20px"}}>
+          <h4 style={{ marginBottom: "20px" }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </h4>
@@ -294,14 +294,17 @@ function ContactUs() {
               }}
               value={formData.category}
             >
-              <MenuItem value={""}>{null}</MenuItem>
-              {categoryOptions.map((option) => {
-                return (
-                  <MenuItem key={option.categoryId} value={option.categoryId}>
-                    {option.name}
-                  </MenuItem>
-                );
-              })}
+              {categoryOptions ? (
+                categoryOptions.map((option) => {
+                  return (
+                    <MenuItem key={option.categoryId} value={option.categoryId}>
+                      {option.name}
+                    </MenuItem>
+                  );
+                })
+              ) : (
+                <MenuItem value={""}>{null}</MenuItem>
+              )}
             </CssTextField>
             <CssTextField
               name="subCategory"
