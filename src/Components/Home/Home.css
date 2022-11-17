@@ -17,17 +17,45 @@
   width: 50%;
 }
 
+.heroBannerDotContainer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.heroBannerDotActive {
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.heroBannerDot {
+  background: #9f9f9f;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .textBlock > h1 {
   font: normal normal 800 100px/122px Montserrat;
 }
 .textBlock > p {
-  max-width:576px;
+  max-width: 576px;
   font: normal normal 800 30px/40px Montserrat;
 }
 
 .greenLine {
   width: 96px;
   border: 16px solid var(--unnamed-color-b4ff00);
+  margin-bottom: 5%;
 }
 
 @media screen and (max-width: 600px) {
