@@ -170,6 +170,7 @@ function ContactUs() {
     ) {
       alert("Empty or incorrect fields!");
     } else {
+      console.log(formData);
       alert("Submited!");
     }
   };
