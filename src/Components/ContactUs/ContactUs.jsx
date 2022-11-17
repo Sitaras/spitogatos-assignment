@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./ContactUs.css";
 import Map from "../../imgs/Map.png";
 import { styled } from "@mui/material/styles";
@@ -49,6 +50,10 @@ const MessageTextField = styled(TextField)({
 });
 
 function ContactUs() {
+  const [categoryOptions, setCategoryOptions] = useState([]);
+  const [selectedCategoryName, setSelectedCategoryName] = useState("");
+  const [subCategoryOptions, setSubCategoryOptions] = useState({});
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -78,6 +83,50 @@ function ContactUs() {
     message: true,
   });
 
+  useEffect(() => {
+    let mounted = true;
+
+    async function fetchData() {
+      let url = "https://run.mocky.io/v3/0b8fbded-6ce4-4cb2-bf2f-d2c39207506b";
+      console.log(url);
+      await axios
+        .get(url)
+        .then((res) => {
+          // do good things
+          console.log(res.data);
+          if (mounted) {
+            let tempOptions = [];
+            let tempSubOptions = {};
+            for (let i in res.data) {
+              tempOptions.push({
+                categoryId: res.data[i].categoryId,
+                name: res.data[i].name,
+              });
+              if (res.data[i].subCategories) {
+                tempSubOptions[res.data[i].name] = [];
+                for (let j in res.data[i].subCategories) {
+                  tempSubOptions[res.data[i].name].push({
+                    subCategoryId: res.data[i].subCategories[j].subCategoryId,
+                    name: res.data[i].subCategories[j].name,
+                  });
+                }
+              }
+            }
+            setCategoryOptions(tempOptions);
+            setSubCategoryOptions(tempSubOptions);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+
+    fetchData();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   const handleForm = (e) => {
     setFormData({
       ...formData,
@@ -93,8 +142,6 @@ function ContactUs() {
   }
 
   const validateFields = async (event) => {
-    console.log(event.target.name);
-    console.log(event.target.value);
     setError({ ...error, [event.target.name]: false });
     setErrorMessages({ ...errorMessages, [event.target.name]: "" });
     if (event.target.value === "" || event.target.value === null) {
@@ -204,7 +251,6 @@ function ContactUs() {
                 }
                 handleForm(e);
               }}
-              onBlur={validateFields}
               error={errorMessages.phone !== ""}
             />
             {errorMessages.phone === "" ? (
@@ -223,12 +269,31 @@ function ContactUs() {
               sx={{ width: "100%" }}
               select
               label="Category"
-              onChange={handleForm}
-              onBlur={validateFields}
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  subCategory: subCategoryOptions[
+                    categoryOptions[e.target.value].name
+                  ]
+                    ? subCategoryOptions[
+                        categoryOptions[e.target.value].name
+                      ][0].subCategoryId
+                    : "",
+                });
+
+                setSelectedCategoryName(categoryOptions[e.target.value].name);
+                handleForm(e);
+              }}
+              defaultValue={""}
             >
-              <MenuItem key={0} value={0}>
-                Option 1
-              </MenuItem>
+              <MenuItem value={""}>{null}</MenuItem>
+              {categoryOptions.map((option) => {
+                return (
+                  <MenuItem key={option.categoryId} value={option.categoryId}>
+                    {option.name}
+                  </MenuItem>
+                );
+              })}
             </CssTextField>
             <CssTextField
               name="subCategory"
@@ -236,11 +301,24 @@ function ContactUs() {
               select
               label="SubCategory"
               onChange={handleForm}
+              defaultValue={""}
               onBlur={validateFields}
             >
-              <MenuItem key={0} value={0}>
-                Option 1
-              </MenuItem>
+              {selectedCategoryName !== "" &&
+              subCategoryOptions[selectedCategoryName] ? (
+                subCategoryOptions[selectedCategoryName].map((option) => {
+                  return (
+                    <MenuItem
+                      key={option.subCategoryId}
+                      value={option.subCategoryId}
+                    >
+                      {option.name}
+                    </MenuItem>
+                  );
+                })
+              ) : (
+                <MenuItem value={""}>{null}</MenuItem>
+              )}
             </CssTextField>
           </div>
           <div className="textField">
@@ -268,7 +346,7 @@ function ContactUs() {
                     onChange={() => {
                       setFormData({
                         ...formData,
-                        ["option1"]: !formData.option1,
+                        option1: !formData.option1,
                       });
                     }}
                   />
@@ -283,7 +361,7 @@ function ContactUs() {
                     onChange={() => {
                       setFormData({
                         ...formData,
-                        ["option2"]: !formData.option2,
+                        option2: !formData.option2,
                       });
                     }}
                   />

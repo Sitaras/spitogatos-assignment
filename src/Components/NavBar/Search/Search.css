@@ -4,7 +4,7 @@
   background-color: white;
   justify-content: center;
   align-items: left;
-  padding-left: 20%;
+  padding: 5%;
   padding-top: 15%;
   height: 100%;
 }
@@ -22,6 +22,10 @@
   text-align: left;
   font: normal normal 800 100px/140px Montserrat;
 }
+.customInput::placeholder {
+  color: #cfcfcf;
+  text-decoration: none;
+}
 
 .customInput {
   text-decoration: underline;
@@ -32,4 +36,25 @@
 
 .innerContainer {
   flex: 1 1 50%;
+}
+
+.customInput {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .innerContainer {
+    flex: 1 1 50%;
+    display: flex;
+  }
+
+  .searchBtn {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .customInput::placeholder,
+  .customInput[type="text"] {
+    font: normal normal 800 28px/48px Montserrat;
+  }
 }
