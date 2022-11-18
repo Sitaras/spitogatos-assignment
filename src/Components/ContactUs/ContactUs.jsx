@@ -97,17 +97,17 @@ function ContactUs() {
           if (mounted) {
             let tempOptions = [];
             let tempSubOptions = {};
-            for (let i in res.data) {
+            for (let obj of res.data) {
               tempOptions.push({
-                categoryId: res.data[i].categoryId,
-                name: res.data[i].name,
+                categoryId: obj.categoryId,
+                name: obj.name,
               });
-              if (res.data[i].subCategories) {
-                tempSubOptions[res.data[i].name] = [];
-                for (let j in res.data[i].subCategories) {
-                  tempSubOptions[res.data[i].name].push({
-                    subCategoryId: res.data[i].subCategories[j].subCategoryId,
-                    name: res.data[i].subCategories[j].name,
+              if (obj.subCategories) {
+                tempSubOptions[obj.name] = [];
+                for (let innerObj of obj.subCategories) {
+                  tempSubOptions[obj.name].push({
+                    subCategoryId: innerObj.subCategoryId,
+                    name: innerObj.name,
                   });
                 }
               }
