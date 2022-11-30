@@ -86,11 +86,11 @@ function ContactUs() {
   useEffect(() => {
     let mounted = true;
 
-    function fetchData() {
+    async function fetchData() {
       // fetch the options of category and subcategory
       let url = "https://run.mocky.io/v3/0b8fbded-6ce4-4cb2-bf2f-d2c39207506b";
       console.log(url);
-      axios
+      await axios
         .get(url)
         .then((res) => {
           console.log(res.data);

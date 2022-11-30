@@ -1,12 +1,14 @@
 .mainContainer {
   width: 100%;
 }
+
 .background {
   margin-top: 20px;
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
+
 .textBlock {
   position: absolute;
   color: white;
@@ -44,10 +46,11 @@
   cursor: pointer;
 }
 
-.textBlock > h1 {
+.textBlock>h1 {
   font: normal normal 800 100px/122px Montserrat;
 }
-.textBlock > p {
+
+.textBlock>p {
   max-width: 576px;
   font: normal normal 800 30px/40px Montserrat;
 }
@@ -58,18 +61,35 @@
   margin-bottom: 5%;
 }
 
+@media screen and (max-width: 1054px) {
+  .textBlock {
+    top: 30%;
+  }
+
+  .textBlock>h1 {
+    font-size: 60px;
+  }
+
+  .textBlock>p {
+    font-size: 28px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .greenLine {
     max-width: 48px;
     border: 8px solid var(--unnamed-color-b4ff00);
   }
+
   .textBlock {
     width: 80%;
   }
-  .textBlock > h1 {
+
+  .textBlock>h1 {
     font: normal normal 800 38px/47px Montserrat;
   }
-  .textBlock > p {
+
+  .textBlock>p {
     max-width: 312px;
     font: normal normal 800 18px/24px Montserrat;
   }

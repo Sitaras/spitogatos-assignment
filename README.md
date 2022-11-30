@@ -1,7 +1,4 @@
-
 # Notes
- - Deployed version <a href='https://sitaras.github.io/spitogatos-assignment/'>Link here!</a>
-
 
  - Only three Tabs are working (scroll functionality): Main One, About Us and Contact.
 

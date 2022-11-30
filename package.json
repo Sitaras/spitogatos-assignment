@@ -2,7 +2,7 @@
   "name": "projectx",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Sitaras.github.io/spitogatos-assignment",
+  "homepage": "http://Sitaras.github.io/spitogatos-assignment",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
