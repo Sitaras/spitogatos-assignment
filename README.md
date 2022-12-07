@@ -1,5 +1,7 @@
 # Notes
 
+ - Deployed version [here!](https://sitaras.github.io/spitogatos-assignment/) 
+
  - Only three Tabs are working (scroll functionality): Main One, About Us and Contact.
 
  - Fully responsive for all devices.
