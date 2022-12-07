@@ -115,9 +115,56 @@
   color: black;
 }
 
-.checkboxes {
+.wrapperCheckBoxes {
+  margin: 20px 0;
   display: flex;
   justify-content: flex-start;
+}
+
+.form-control {
+  display: flex;
+  gap: 5px;
+}
+
+.form-control + .form-control {
+  margin-left: 20px;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: inherit;
+  /* Not removed via appearance */
+  margin: 0;
+  border: 1px solid #4b00ff;
+  border-radius: 4px;
+
+  width: 24px;
+  height: 24px;
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 15px;
+  content: "\f00c";
+  color: #4b00ff;
+  transform: scale(0);
+  transition: 150ms transform ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.input-label {
+  margin-left: 5px;
 }
 
 @media screen and (max-width: 1024px) {

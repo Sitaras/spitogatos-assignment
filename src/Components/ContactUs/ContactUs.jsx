@@ -3,7 +3,7 @@ import axios from "axios";
 import "./ContactUs.css";
 import Map from "../../imgs/Map.png";
 import { styled } from "@mui/material/styles";
-import { Checkbox, FormControlLabel, TextField, MenuItem } from "@mui/material";
+import { TextField, MenuItem } from "@mui/material";
 
 const CssTextField = styled(TextField)({
   "& .MuiInputBase-root": {
@@ -344,39 +344,42 @@ function ContactUs() {
             />
             <p>{100 - formData.message.length}</p>
           </div>
+
           <div className="checkboxContainer">
             <p>Please select at least one of the following:</p>
-            <div className="checkboxes">
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    name="option1"
-                    value={formData.option1}
-                    onChange={() => {
-                      setFormData({
-                        ...formData,
-                        option1: !formData.option1,
-                      });
-                    }}
-                  />
-                }
-                label="Option 1"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    name="option2"
-                    value={formData.option2}
-                    onChange={() => {
-                      setFormData({
-                        ...formData,
-                        option2: !formData.option2,
-                      });
-                    }}
-                  />
-                }
-                label="Option 2"
-              />
+            <div className="wrapperCheckBoxes">
+              <div className="form-control">
+                <input
+                  type="checkbox"
+                  id="checkbox1"
+                  value={formData.option1}
+                  onChange={() => {
+                    setFormData({
+                      ...formData,
+                      option1: !formData.option1,
+                    });
+                  }}
+                />
+                <label for="checkbox1" className="input-label">
+                  Option 1
+                </label>
+              </div>
+              <div className="form-control">
+                <input
+                  type="checkbox"
+                  id="checkbox2"
+                  value={formData.option2}
+                  onChange={() => {
+                    setFormData({
+                      ...formData,
+                      option2: !formData.option2,
+                    });
+                  }}
+                />
+                <label for="checkbox2" className="input-label">
+                  Option 2
+                </label>
+              </div>
             </div>
           </div>
           <button className="searchBtn" onClick={handleSubmit}>
