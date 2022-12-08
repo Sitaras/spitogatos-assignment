@@ -42,12 +42,12 @@ function App() {
 
   return (
     <>
-    <SEO
-      title="Learning React Helmet!"
-      description="Beginner friendly page for learning React Helmet."
-      name="Company name."
-      type="article" />
       <Sliders>
+      <SEO
+        title="Learning React Helmet!"
+        description="Beginner friendly page for learning React Helmet."
+        name="Company name."
+        type="article" />
         <NavBar />
         <Home />
         <AboutUs />
