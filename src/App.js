@@ -7,6 +7,7 @@ import ContactUs from "./Components/ContactUs/ContactUs";
 import Footer from "./Components/Footer/Footer";
 import { useStateContext } from "./Contexts/ContextProvider";
 import Sliders from "./Components/NavBar/Sliders";
+import SEO from "./Contexts/CEO";
 
 function App() {
   const { setDesktopMenu, setScreenSize, screenSize } = useStateContext();
@@ -41,6 +42,11 @@ function App() {
 
   return (
     <>
+    <SEO
+      title="Learning React Helmet!"
+      description="Beginner friendly page for learning React Helmet."
+      name="Company name."
+      type="article" />
       <Sliders>
         <NavBar />
         <Home />
