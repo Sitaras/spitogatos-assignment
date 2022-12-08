@@ -7,6 +7,7 @@ import ContactUs from "./Components/ContactUs/ContactUs";
 import Footer from "./Components/Footer/Footer";
 import { useStateContext } from "./Contexts/ContextProvider";
 import Sliders from "./Components/NavBar/Sliders";
+import HeadTag from "./Contexts/HeadTag";
 
 function App() {
   const { setDesktopMenu, setScreenSize, screenSize } = useStateContext();
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <>
+      <HeadTag/>
       <Sliders>
         <NavBar />
         <Home />
