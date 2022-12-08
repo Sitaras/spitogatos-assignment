@@ -27,7 +27,7 @@ function HeadTag (props) {
       <meta
         property="og:image"
         key="og:image"
-        content={`${process.env.BASE_URL}/images/frontend.jpeg`}
+        content={`https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png`}
       />
     </Helmet>
   );
