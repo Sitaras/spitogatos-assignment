@@ -4,6 +4,7 @@ import Logo from "../../imgs/Logo.svg";
 import Search from "../../imgs/Search.svg";
 import Menu from "../../imgs/Menu.svg";
 import { useStateContext } from "../../Contexts/ContextProvider";
+import HeadTag from "../../Contexts/HeadTag";
 
 function NavBar() {
   const {
@@ -19,6 +20,7 @@ function NavBar() {
   return (
     <>
       <header>
+        <HeadTag/>
         <div className="headerContainer">
           <div className="logoContainer">
             <img src={Logo} alt="Logo" className="logo" />
