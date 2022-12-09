@@ -21,9 +21,16 @@ function HeadTag (props) {
       <meta property="og:type" content="website" />
       <meta property="og:description" content={metaDescription} />
       <meta
-        property="og:image:secure"
+        property="og:image"
         content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
       />
+      <meta
+        property="og:image:secure_url"
+        content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
+      />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="300" />
     </Helmet>
   );
 };
