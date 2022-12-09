@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/spitogatos-assignment/static/css/main.61cae9be.css",
-    "main.js": "/spitogatos-assignment/static/js/main.88eec556.js",
+    "main.js": "/spitogatos-assignment/static/js/main.f278b5bb.js",
     "static/js/787.09c29f35.chunk.js": "/spitogatos-assignment/static/js/787.09c29f35.chunk.js",
     "static/media/background.png": "/spitogatos-assignment/static/media/background.56c9a9e966fa2215de3e.png",
     "static/media/Map.png": "/spitogatos-assignment/static/media/Map.406680297235e9c1ed45.png",
     "static/media/Picture1.png": "/spitogatos-assignment/static/media/Picture1.4c8ce17ff8cefb2f164a.png",
     "static/media/Picture2.png": "/spitogatos-assignment/static/media/Picture2.f2185b78efff5b1cef2a.png",
+    "index.html": "/spitogatos-assignment/index.html",
     "static/media/instagram.svg": "/spitogatos-assignment/static/media/instagram.40881aa634071f198da3b681a1e01987.svg",
     "static/media/Logo.svg": "/spitogatos-assignment/static/media/Logo.0d9bc84eba8d86558432de8721479e7c.svg",
     "static/media/world.svg": "/spitogatos-assignment/static/media/world.74eafe0baab0f8754ec59a1b829061b8.svg",
@@ -16,13 +17,12 @@
     "static/media/CloseSearch.svg": "/spitogatos-assignment/static/media/CloseSearch.130a9333f69ce379d3fcf3407befdaef.svg",
     "static/media/CloseButton.svg": "/spitogatos-assignment/static/media/CloseButton.40c9d591e20231de9dc75044106fe513.svg",
     "static/media/Menu.svg": "/spitogatos-assignment/static/media/Menu.9a35a3b15f0c7462ad53df2d0572ccd3.svg",
-    "index.html": "/spitogatos-assignment/index.html",
     "main.61cae9be.css.map": "/spitogatos-assignment/static/css/main.61cae9be.css.map",
-    "main.88eec556.js.map": "/spitogatos-assignment/static/js/main.88eec556.js.map",
+    "main.f278b5bb.js.map": "/spitogatos-assignment/static/js/main.f278b5bb.js.map",
     "787.09c29f35.chunk.js.map": "/spitogatos-assignment/static/js/787.09c29f35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.61cae9be.css",
-    "static/js/main.88eec556.js"
+    "static/js/main.f278b5bb.js"
   ]
 }
