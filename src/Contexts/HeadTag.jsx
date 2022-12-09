@@ -11,26 +11,23 @@ function HeadTag (props) {
   return (
     <Helmet>
       <title>{title}</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="description" content={metaDescription} />
-      <meta name="title" content={title} />
-      <meta property="og:title" content={title} />
-      <meta property="og:locale" content="en_US" />
-      <meta charSet="utf-8" />
-      <meta property="og:type" content="website" />
-      <meta property="og:description" content={metaDescription} />
-      <meta
-        property="og:image"
-        content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
-      />
-      <meta
-        property="og:image:secure_url"
-        content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
-      />
-      <meta property="og:image:type" content="image/jpeg" />
-      <meta property="og:image:width" content="400" />
-      <meta property="og:image:height" content="300" />
+      <title>Meta Tags — Preview, Edit and Generate</title>
+      <meta name="title" content="Meta Tags — Preview, Edit and Generate"/>
+      <meta name="description" content="With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!"/>
+
+      <meta property="og:type" content="website"/>
+      <meta property="og:url" content="https://metatags.io/"/>
+      <meta property="og:title" content="Meta Tags — Preview, Edit and Generate"/>
+      <meta property="og:description" content="With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!"/>
+      <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"/>
+
+
+      <meta property="twitter:card" content="summary_large_image"/>
+      <meta property="twitter:url" content="https://metatags.io/"/>
+      <meta property="twitter:title" content="Meta Tags — Preview, Edit and Generate"/>
+      <meta property="twitter:description" content="With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!"/>
+      <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"/>
+
     </Helmet>
   );
 };
