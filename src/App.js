@@ -31,7 +31,6 @@ function App() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    console.log(screenSize);
     if (screenSize <= 1024) {
       setDesktopMenu(false);
     } else {

@@ -88,30 +88,31 @@ function ContactUs() {
 
     async function fetchData() {
       // fetch the options of category and subcategory
-      let url = "https://run.mocky.io/v3/0b8fbded-6ce4-4cb2-bf2f-d2c39207506b";
-      console.log(url);
+      const url = "https://run.mocky.io/v3/0b8fbded-6ce4-4cb2-bf2f-d2c39207506b";
       await axios
         .get(url)
         .then((res) => {
-          console.log(res.data);
           if (mounted) {
-            let tempOptions = [];
-            let tempSubOptions = {};
-            for (let obj of res.data) {
-              tempOptions.push({
-                categoryId: obj.categoryId,
-                name: obj.name,
-              });
-              if (obj.subCategories) {
-                tempSubOptions[obj.name] = [];
-                for (let innerObj of obj.subCategories) {
-                  tempSubOptions[obj.name].push({
-                    subCategoryId: innerObj.subCategoryId,
-                    name: innerObj.name,
-                  });
+            const tempOptions = res.data.map((item) => ({
+              categoryId: item.categoryId,
+              name: item.name,
+            }));
+
+            const tempSubOptions = res.data.reduce(
+              (accumulator, currentItem) => {
+                if (currentItem.subCategories) {
+                  accumulator[currentItem.name] = currentItem.subCategories.map(
+                    (item) => ({
+                      subCategoryId: item.subCategoryId,
+                      name: item.name,
+                    })
+                  );
                 }
-              }
-            }
+                return accumulator;
+              },
+              {}
+            );
+
             setCategoryOptions(tempOptions);
             setSubCategoryOptions(tempSubOptions);
           }
@@ -135,7 +136,7 @@ function ContactUs() {
   };
 
   function validateEmail(email) {
-    let validRegex =
+    const validRegex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@spitogatos.gr$/;
 
     return !!email.toLowerCase().match(validRegex);
@@ -170,7 +171,6 @@ function ContactUs() {
     ) {
       alert("Empty or incorrect fields!");
     } else {
-      console.log(formData);
       alert("Submited!");
     }
   };
@@ -360,7 +360,7 @@ function ContactUs() {
                     });
                   }}
                 />
-                <label for="checkbox1" className="input-label">
+                <label htmlFor="checkbox1" className="input-label">
                   Option 1
                 </label>
               </div>
@@ -376,7 +376,7 @@ function ContactUs() {
                     });
                   }}
                 />
-                <label for="checkbox2" className="input-label">
+                <label htmlFor="checkbox2" className="input-label">
                   Option 2
                 </label>
               </div>
