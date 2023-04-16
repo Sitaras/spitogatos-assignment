@@ -8,12 +8,8 @@ import Footer from "./Components/Footer/Footer";
 import { useStateContext } from "./Contexts/ContextProvider";
 
 function App() {
-  const {
-    setDesktopMenu,
-    setScreenSize,
-    screenSize,
-  } = useStateContext();
-  
+  const { setDesktopMenu, setScreenSize, screenSize } = useStateContext();
+
   const documentHeight = () => {
     const doc = document.documentElement;
     doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
@@ -28,9 +24,36 @@ function App() {
     documentHeight();
     handleResize();
 
+    const sections = document.querySelectorAll("section");
+    const navLi = document.querySelectorAll("div nav a");
+
+    const resetLinks = () => {
+      navLi.forEach((a) => a.classList.remove("activeTab"));
+    };
+
+    const handleScroll = () => {
+      const { pageYOffset } = window;
+
+      sections.forEach((section) => {
+        const { id, offsetTop, clientHeight } = section;
+        const offset = offsetTop - 160;
+        if (pageYOffset >= offset && pageYOffset < offset + clientHeight) {
+          resetLinks();
+          navLi.forEach((a) => {
+            if (a.dataset.scroll === id) {
+              a.classList.add("activeTab");
+            }
+          });
+        }
+      });
+    };
+
+    document.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("resize", documentHeight);
+      document.removeEventListener("scroll", handleScroll);
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 

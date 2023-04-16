@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NavBar.css";
 import Logo from "../../assets/Logo.svg";
 import SearchIcon from "../../assets/Search.svg";
@@ -8,17 +8,11 @@ import MobileMenu from "./MobileMenu/MobileMenu";
 import Search from "./Search/Search";
 
 function NavBar() {
-  const {
-    desktopMenu,
-    openMobileMenu,
-    search,
-    setOpenMobileMenu,
-    activeNav,
-    setActiveNav,
-    activeENGR,
-    setActiveENGR,
-    setSearch,
-  } = useStateContext();
+  const { desktopMenu, activeENGR, setActiveENGR } =
+    useStateContext();
+
+  const [openSearch, setOpenSearch] = useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
   return (
     <>
@@ -28,50 +22,26 @@ function NavBar() {
             <img src={Logo} alt="Logo" className="logo" />
           </div>
           {desktopMenu && (
-            <div className="navigation">
-              <a
-                href="#mainone"
-                onClick={() => setActiveNav("#mainone")}
-                className={activeNav === "#mainone" ? "activeTab" : "anchor"}
-              >
+            <nav className="navigation">
+              <a data-scroll="mainone" href="#mainone" className={"activeTab"}>
                 Main One
               </a>
-              <a
-                href="#pagetwo"
-                onClick={() => setActiveNav("#pagetwo")}
-                className={activeNav === "#pagetwo" ? "activeTab" : ""}
-              >
+              <a data-scroll="pagetwo" href="#pagetwo">
                 Page Two
               </a>
-              <a
-                href="#pagethree"
-                onClick={() => setActiveNav("#pagethree")}
-                className={activeNav === "#pagethree" ? "activeTab" : ""}
-              >
+              <a data-scroll="pagethree" href="#pagethree">
                 Page Three
               </a>
-              <a
-                href="#aboutus"
-                onClick={() => setActiveNav("#aboutus")}
-                className={activeNav === "#aboutus" ? "activeTab" : ""}
-              >
+              <a data-scroll="aboutus" href="#aboutus">
                 About us
               </a>
-              <a
-                href="#ourwork"
-                onClick={() => setActiveNav("#ourwork")}
-                className={activeNav === "#ourwork" ? "activeTab" : ""}
-              >
+              <a data-scroll="ourwork" href="#ourwork">
                 Our Work
               </a>
-              <a
-                href="#contact"
-                onClick={() => setActiveNav("#contact")}
-                className={activeNav === "#contact" ? "activeTab" : ""}
-              >
+              <a data-scroll="contact" href="#contact">
                 Contact
               </a>
-            </div>
+            </nav>
           )}
 
           <div className="changeLangAndSearch">
@@ -111,7 +81,7 @@ function NavBar() {
               onClick={() => {
                 const body = document.body;
                 body.className = "modal-open";
-                setSearch(true);
+                setOpenSearch(true);
               }}
             />
             {!desktopMenu && (
@@ -129,8 +99,20 @@ function NavBar() {
           </div>
         </div>
       </header>
-      {search && <Search />}
-      {openMobileMenu && <MobileMenu />}
+      {openSearch && (
+        <Search
+          handleCloseSearch={() => {
+            setOpenSearch(false);
+          }}
+        />
+      )}
+      {openMobileMenu && (
+        <MobileMenu
+          handleCloseMobileMenu={() => {
+            setOpenMobileMenu(false);
+          }}
+        />
+      )}
     </>
   );
 }

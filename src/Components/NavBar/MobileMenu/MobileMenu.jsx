@@ -8,19 +8,13 @@ import World from "../../../assets/world.svg";
 
 import styles from "./MobileMenu.module.css";
 
-function MobileMenu() {
-  const {
-    setOpenMobileMenu,
-    activeNav,
-    setActiveNav,
-    activeENGR,
-    setActiveENGR,
-  } = useStateContext();
+function MobileMenu({ handleCloseMobileMenu }) {
+  const { activeENGR, setActiveENGR } = useStateContext();
 
   const closeMobileMenu = () => {
     const body = document.body;
     body.className = "";
-    setOpenMobileMenu(false);
+    handleCloseMobileMenu();
   };
 
   return (
@@ -42,50 +36,26 @@ function MobileMenu() {
             href="#mainone"
             onClick={() => {
               closeMobileMenu();
-              setActiveNav("#mainone");
             }}
-            className={activeNav === "#mainone" ? "activeTab" : ""}
           >
             Main One
           </a>
-          <a
-            href="#pagetwo"
-            onClick={() => setActiveNav("#pagetwo")}
-            className={activeNav === "#pagetwo" ? "activeTab" : ""}
-          >
-            Page Two
-          </a>
-          <a
-            href="#pagethree"
-            onClick={() => setActiveNav("#pagethree")}
-            className={activeNav === "#pagethree" ? "activeTab" : ""}
-          >
-            Page Three
-          </a>
+          <a href="#pagetwo">Page Two</a>
+          <a href="#pagethree">Page Three</a>
           <a
             href="#aboutus"
             onClick={() => {
               closeMobileMenu();
-              setActiveNav("#aboutus");
             }}
-            className={activeNav === "#aboutus" ? "activeTab" : ""}
           >
             About us
           </a>
-          <a
-            href="#ourwork"
-            onClick={() => setActiveNav("#ourwork")}
-            className={activeNav === "#ourwork" ? "activeTab" : ""}
-          >
-            Our Work
-          </a>
+          <a href="#ourwork">Our Work</a>
           <a
             href="#contact"
             onClick={() => {
               closeMobileMenu();
-              setActiveNav("#contact");
             }}
-            className={activeNav === "#contact" ? "activeTab" : ""}
           >
             Contact
           </a>

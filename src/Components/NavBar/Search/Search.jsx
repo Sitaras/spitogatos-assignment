@@ -1,11 +1,9 @@
 import React from "react";
 import CloseSearch from "../../../assets/CloseSearch.svg";
-import { useStateContext } from "../../../Contexts/ContextProvider";
 
 import styles from "./Search.module.css";
 
-function Search() {
-  const { setSearch } = useStateContext();
+function Search({ handleCloseSearch }) {
   return (
     <div className={styles.searchContainer}>
       <form className={styles.containerSearch}>
@@ -16,7 +14,7 @@ function Search() {
           onClick={() => {
             const body = document.body;
             body.className = "";
-            setSearch(false);
+            handleCloseSearch();
           }}
         />
         <div className={styles.innerContainer}>
