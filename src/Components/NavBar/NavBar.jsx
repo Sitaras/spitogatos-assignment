@@ -1,13 +1,17 @@
 import React from "react";
 import "./NavBar.css";
-import Logo from "../../imgs/Logo.svg";
-import Search from "../../imgs/Search.svg";
-import Menu from "../../imgs/Menu.svg";
+import Logo from "../../assets/Logo.svg";
+import SearchIcon from "../../assets/Search.svg";
+import Menu from "../../assets/Menu.svg";
 import { useStateContext } from "../../Contexts/ContextProvider";
+import MobileMenu from "./MobileMenu/MobileMenu";
+import Search from "./Search/Search";
 
 function NavBar() {
   const {
     desktopMenu,
+    openMobileMenu,
+    search,
     setOpenMobileMenu,
     activeNav,
     setActiveNav,
@@ -23,7 +27,7 @@ function NavBar() {
           <div className="logoContainer">
             <img src={Logo} alt="Logo" className="logo" />
           </div>
-          {desktopMenu ? (
+          {desktopMenu && (
             <div className="navigation">
               <a
                 href="#mainone"
@@ -68,10 +72,10 @@ function NavBar() {
                 Contact
               </a>
             </div>
-          ) : null}
+          )}
 
           <div className="changeLangAndSearch">
-            {desktopMenu ? (
+            {desktopMenu && (
               <div className="changeLang">
                 <button
                   className={
@@ -99,25 +103,34 @@ function NavBar() {
                   GR
                 </button>
               </div>
-            ) : null}
+            )}
             <img
-              src={Search}
+              src={SearchIcon}
               alt="Search"
               className="searchLogo"
-              onClick={() => setSearch(true)}
+              onClick={() => {
+                const body = document.body;
+                body.className = "modal-open";
+                setSearch(true);
+              }}
             />
-            {!desktopMenu ? (
+            {!desktopMenu && (
               <img
                 src={Menu}
                 alt="Menu"
                 className="menuLogo"
-                onClick={() => setOpenMobileMenu(true)}
+                onClick={() => {
+                  const body = document.body;
+                  body.className = "modal-open";
+                  setOpenMobileMenu(true);
+                }}
               />
-            ) : null}
+            )}
           </div>
         </div>
       </header>
-      )}
+      {search && <Search />}
+      {openMobileMenu && <MobileMenu />}
     </>
   );
 }

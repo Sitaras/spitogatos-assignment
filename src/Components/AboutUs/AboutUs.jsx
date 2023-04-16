@@ -1,7 +1,7 @@
 import React from "react";
 import "./AboutUs.css";
-import Picture1 from "../../imgs/Picture1.png";
-import Picture2 from "../../imgs/Picture2.png";
+import Picture1 from "../../assets/Picture1.png";
+import Picture2 from "../../assets/Picture2.png";
 
 function AboutUs() {
   return (

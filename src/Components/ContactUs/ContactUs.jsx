@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ContactUs.css";
-import Map from "../../imgs/Map.png";
+import Map from "../../assets/Map.png";
 import { styled } from "@mui/material/styles";
 import { TextField, MenuItem } from "@mui/material";
 

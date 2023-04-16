@@ -1,31 +1,36 @@
 import React from "react";
-import "./Search.css";
-import CloseSearch from "../../../imgs/CloseSearch.svg";
+import CloseSearch from "../../../assets/CloseSearch.svg";
 import { useStateContext } from "../../../Contexts/ContextProvider";
+
+import styles from "./Search.module.css";
 
 function Search() {
   const { setSearch } = useStateContext();
   return (
-    <section>
-      <form className="containerSearch">
+    <div className={styles.searchContainer}>
+      <form className={styles.containerSearch}>
         <img
           src={CloseSearch}
           alt="close search"
-          className="closeSearch"
-          onClick={() => setSearch(false)}
+          className={styles.closeSearch}
+          onClick={() => {
+            const body = document.body;
+            body.className = "";
+            setSearch(false);
+          }}
         />
-        <div className="innerContainer">
-          <input  
+        <div className={styles.innerContainer}>
+          <input
             type="text"
-            className="customInput"
+            className={styles.customInput}
             placeholder="Start Typing"
           />
         </div>
-        <div className="innerContainer">
-          <button className="searchBtn">Search</button>
+        <div className={styles.innerContainer}>
+          <button className={styles.searchBtn}>Search</button>
         </div>
       </form>
-    </section>
+    </div>
   );
 }
 

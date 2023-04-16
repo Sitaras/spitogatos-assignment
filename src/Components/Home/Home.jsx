@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
-import Background from "../../imgs/background.png";
+import Background from "../../assets/background.png";
 import Carousel from "./Carousel";
 
 function Home() {

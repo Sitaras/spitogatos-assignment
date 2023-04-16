@@ -6,10 +6,14 @@ import AboutUs from "./Components/AboutUs/AboutUs";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import Footer from "./Components/Footer/Footer";
 import { useStateContext } from "./Contexts/ContextProvider";
-import Sliders from "./Components/NavBar/Sliders";
 
 function App() {
-  const { setDesktopMenu, setScreenSize, screenSize } = useStateContext();
+  const {
+    setDesktopMenu,
+    setScreenSize,
+    screenSize,
+  } = useStateContext();
+  
   const documentHeight = () => {
     const doc = document.documentElement;
     doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
@@ -40,13 +44,11 @@ function App() {
 
   return (
     <>
-      <Sliders>
-        <NavBar />
-        <Home />
-        <AboutUs />
-        <ContactUs />
-        <Footer/>
-      </Sliders>
+      <NavBar />
+      <Home />
+      <AboutUs />
+      <ContactUs />
+      <Footer />
     </>
   );
 }
