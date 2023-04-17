@@ -27,7 +27,7 @@ function NavBar() {
               <a
                 data-scroll="mainone"
                 href="#mainone"
-                className={styles.activeTab}
+                className={"activeTab"}
               >
                 Main One
               </a>

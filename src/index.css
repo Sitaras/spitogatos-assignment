@@ -46,6 +46,15 @@ section {
   background: #3700b6;
 }
 
+.activeTab {
+  color: #b4ff00;
+  text-decoration: underline;
+  text-decoration-color: #b4ff00;
+  text-decoration-thickness: 8px;
+  text-underline-position: under;
+  text-underline-offset: 100%;
+}
+
 .modal-open {
   overflow: hidden;
 }

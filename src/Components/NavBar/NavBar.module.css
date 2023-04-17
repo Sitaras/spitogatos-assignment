@@ -46,15 +46,6 @@ header {
   color: #b4ff00;
 }
 
-.navigation > .activeTab {
-  color: #b4ff00;
-  text-decoration: underline;
-  text-decoration-color: #b4ff00;
-  text-decoration-thickness: 8px;
-  text-underline-position: under;
-  text-underline-offset: 100%;
-}
-
 .changeLangAndSearch {
   flex: 1 1 33%;
   display: flex;
