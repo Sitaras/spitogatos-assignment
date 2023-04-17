@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import "./NavBar.css";
 import Logo from "../../assets/Logo.svg";
 import SearchIcon from "../../assets/Search.svg";
 import Menu from "../../assets/Menu.svg";
 import { useStateContext } from "../../Contexts/ContextProvider";
 import MobileMenu from "./MobileMenu/MobileMenu";
 import Search from "./Search/Search";
+
+import styles from  "./NavBar.module.css";
 
 function NavBar() {
   const { desktopMenu, activeENGR, setActiveENGR } =
@@ -17,13 +18,17 @@ function NavBar() {
   return (
     <>
       <header>
-        <div className="headerContainer">
-          <div className="logoContainer">
-            <img src={Logo} alt="Logo" className="logo" />
+        <div className={styles.headerContainer}>
+          <div className={styles.logoContainer}>
+            <img src={Logo} alt="Logo" className={styles.logo} />
           </div>
           {desktopMenu && (
-            <nav className="navigation">
-              <a data-scroll="mainone" href="#mainone" className={"activeTab"}>
+            <nav className={styles.navigation}>
+              <a
+                data-scroll="mainone"
+                href="#mainone"
+                className={styles.activeTab}
+              >
                 Main One
               </a>
               <a data-scroll="pagetwo" href="#pagetwo">
@@ -44,14 +49,14 @@ function NavBar() {
             </nav>
           )}
 
-          <div className="changeLangAndSearch">
+          <div className={styles.changeLangAndSearch}>
             {desktopMenu && (
-              <div className="changeLang">
+              <div className={styles.changeLang}>
                 <button
                   className={
                     activeENGR === "EN"
-                      ? "changeLanguageActive"
-                      : "changeLanguage"
+                      ? styles.changeLanguageActive
+                      : styles.changeLanguage
                   }
                   onClick={() => {
                     setActiveENGR("EN");
@@ -63,8 +68,8 @@ function NavBar() {
                 <button
                   className={
                     activeENGR === "GR"
-                      ? "changeLanguageActive"
-                      : "changeLanguage"
+                      ? styles.changeLanguageActive
+                      : styles.changeLanguage
                   }
                   onClick={() => {
                     setActiveENGR("GR");
@@ -77,7 +82,7 @@ function NavBar() {
             <img
               src={SearchIcon}
               alt="Search"
-              className="searchLogo"
+              className={styles.searchLogo}
               onClick={() => {
                 const body = document.body;
                 body.className = "modal-open";
@@ -88,7 +93,7 @@ function NavBar() {
               <img
                 src={Menu}
                 alt="Menu"
-                className="menuLogo"
+                className={styles.menuLogo}
                 onClick={() => {
                   const body = document.body;
                   body.className = "modal-open";

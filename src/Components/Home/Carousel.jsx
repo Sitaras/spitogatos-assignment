@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-import "./Carousel.css";
+import styles from "./Carousel.module.css";
 
 function Carousel(props) {
   const { children } = props;
@@ -63,7 +63,7 @@ function Carousel(props) {
   const dotsGenerator = () => {
     return [...Array(children.length)].map((e, i) => (
       <div
-        className={activeDot === i ? "heroBannerDotActive" : "heroBannerDot"}
+        className={activeDot === i ? styles.heroBannerDotActive : styles.heroBannerDot}
         onClick={() => {
           setActiveDot(i);
           setCurrentIndex(i);
@@ -73,9 +73,9 @@ function Carousel(props) {
   };
 
   return (
-    <div className="carousel-container">
+    <div className={styles["carousel-container"]}>
       <div
-        className="carousel-content-wrapper"
+        className={styles["carousel-content-wrapper"]}
         onTouchStart={handleTouchStart}
         onMouseDown={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -85,13 +85,13 @@ function Carousel(props) {
       >
         <div
           ref={ref}
-          className="carousel-content"
+          className={styles["carousel-content"]}
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {children}
         </div>
       </div>
-      <div className="heroBannerDotContainer">{dotsGenerator()}</div>
+      <div className={styles["heroBannerDotContainer"]}>{dotsGenerator()}</div>
     </div>
   );
 }

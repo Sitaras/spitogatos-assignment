@@ -35,3 +35,30 @@
     flex-shrink: 0;
     flex-grow: 1;
 }
+
+.heroBannerDotContainer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.heroBannerDotActive {
+    width: 16px;
+    height: 16px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.heroBannerDot {
+    background: #9f9f9f;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}

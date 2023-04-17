@@ -46,8 +46,6 @@ section {
   background: #3700b6;
 }
 
-
 .modal-open {
   overflow: hidden;
-  /* display: none; */
 }

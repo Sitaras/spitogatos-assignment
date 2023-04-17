@@ -1,6 +1,8 @@
-.autoScreens {
-  min-height: auto;
+.contactUsSection {
+  height: auto;
+  min-height: var(--doc-height);
 }
+
 .containerContact {
   display: grid;
   grid-template-columns: 45% 55%;
@@ -30,11 +32,11 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.greenDot > p {
+.greenDot>p {
   display: none;
 }
 
-.greenDot:hover > p {
+.greenDot:hover>p {
   display: block;
   font-size: 2px;
   font-weight: 500;
@@ -50,7 +52,7 @@
   object-fit: cover;
 }
 
-.form {
+.formContainer {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -66,7 +68,7 @@
   width: 100%;
 }
 
-.textField > p {
+.textField>p {
   margin-top: 10px;
   margin-right: 15px;
   text-align: right;
@@ -86,19 +88,22 @@
 .select1 {
   width: 80%;
 }
+
 .select2 {
   width: 80%;
 }
 
-.form > h2 {
+.formContainer>h2 {
   margin-right: auto;
   font: normal normal 800 32px/39px Montserrat;
 }
-.form > h4 {
+
+.formContainer>h4 {
   font: normal normal normal 18px/26px Montserrat;
   color: black;
 }
-.form > p {
+
+.formContainer>p {
   font: normal normal normal 16px/16px Montserrat;
   color: black;
 }
@@ -109,7 +114,8 @@
   justify-content: flex-start;
   align-self: flex-start;
 }
-.checkboxContainer > p {
+
+.checkboxContainer>p {
   text-align: left;
   font: normal normal normal 16px/16px Montserrat;
   color: black;
@@ -121,12 +127,12 @@
   justify-content: flex-start;
 }
 
-.form-control {
+.formContainer-control {
   display: flex;
   gap: 5px;
 }
 
-.form-control + .form-control {
+.formContainer-control+.formContainer-control {
   margin-left: 20px;
 }
 
@@ -175,7 +181,7 @@ input[type="checkbox"]:checked::before {
     grid-template-rows: 1fr 296px;
   }
 
-  .autoScreens {
+  .contactUsSection {
     height: auto;
   }
 
@@ -183,11 +189,12 @@ input[type="checkbox"]:checked::before {
     transform: scale(7);
   }
 
-  .form {
+  .formContainer {
     grid-column: 1/-1;
     grid-row: 1;
     padding: 5%;
   }
+
   .dropdowns {
     display: flex;
     flex-direction: column;
@@ -199,6 +206,7 @@ input[type="checkbox"]:checked::before {
   .select1 {
     width: 100%;
   }
+
   .select2 {
     width: 100%;
   }

@@ -1,4 +1,4 @@
-.autoScreens {
+.aboutUsSection {
   height: auto;
   min-height: var(--doc-height);
 }
@@ -74,7 +74,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .autoScreens {
+  .aboutUsSection {
     height: auto;
   }
   .containerAboutUs {

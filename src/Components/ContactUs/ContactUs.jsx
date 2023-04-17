@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./ContactUs.css";
 import Map from "../../assets/Map.png";
 import { styled } from "@mui/material/styles";
 import { TextField, MenuItem } from "@mui/material";
+
+import styles from "./ContactUs.module.css";
 
 const CssTextField = styled(TextField)({
   "& .MuiInputBase-root": {
@@ -88,7 +89,8 @@ function ContactUs() {
 
     async function fetchData() {
       // fetch the options of category and subcategory
-      const url = "https://run.mocky.io/v3/0b8fbded-6ce4-4cb2-bf2f-d2c39207506b";
+      const url =
+        "https://run.mocky.io/v3/0b8fbded-6ce4-4cb2-bf2f-d2c39207506b";
       await axios
         .get(url)
         .then((res) => {
@@ -176,22 +178,22 @@ function ContactUs() {
   };
 
   return (
-    <section id="contact" className="autoScreens">
-      <div className="containerContact">
-        <div className="mapContainer">
-          <img src={Map} alt="map" className="map" />
-          <div className="greenDot">
+    <section id="contact" className={styles.contactUsSection}>
+      <div className={styles.containerContact}>
+        <div className={styles.mapContainer}>
+          <img src={Map} alt="map" className={styles.map} />
+          <div className={styles.greenDot}>
             <p>S.und@themail.com</p>
             <p>+30 210 1234 567</p>
           </div>
         </div>
-        <form className="form">
+        <form className={styles.formContainer}>
           <h2>Contact Us</h2>
           <h4 style={{ marginBottom: "20px" }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </h4>
-          <div className="textField">
+          <div className={styles.textField}>
             <CssTextField
               name="name"
               label="Full Name"
@@ -220,7 +222,7 @@ function ContactUs() {
               <p style={{ color: "red" }}>{errorMessages.name}</p>
             )}
           </div>
-          <div className="textField">
+          <div className={styles.textField}>
             <CssTextField
               name="email"
               label="Email"
@@ -241,7 +243,7 @@ function ContactUs() {
               <p style={{ color: "red" }}>{errorMessages.email}</p>
             )}
           </div>
-          <div className="textField">
+          <div className={styles.textField}>
             <CssTextField
               name="phone"
               sx={{ width: "100%" }}
@@ -270,7 +272,7 @@ function ContactUs() {
               <p style={{ color: "red" }}>{errorMessages.phone}</p>
             )}
           </div>
-          <div className="dropdowns">
+          <div className={styles.dropdowns}>
             <CssTextField
               name="category"
               sx={{ width: "100%" }}
@@ -330,7 +332,7 @@ function ContactUs() {
               )}
             </CssTextField>
           </div>
-          <div className="textField">
+          <div className={styles.textField}>
             <MessageTextField
               name="message"
               sx={{ width: "100%" }}
@@ -345,10 +347,10 @@ function ContactUs() {
             <p>{100 - formData.message.length}</p>
           </div>
 
-          <div className="checkboxContainer">
+          <div className={styles.checkboxContainer}>
             <p>Please select at least one of the following:</p>
-            <div className="wrapperCheckBoxes">
-              <div className="form-control">
+            <div className={styles.wrapperCheckBoxes}>
+              <div className={styles["formContainer-control"]}>
                 <input
                   type="checkbox"
                   id="checkbox1"
@@ -360,11 +362,11 @@ function ContactUs() {
                     });
                   }}
                 />
-                <label htmlFor="checkbox1" className="input-label">
+                <label htmlFor="checkbox1" className={styles["input-label"]}>
                   Option 1
                 </label>
               </div>
-              <div className="form-control">
+              <div className={styles["formContainer-control"]}>
                 <input
                   type="checkbox"
                   id="checkbox2"
@@ -376,7 +378,7 @@ function ContactUs() {
                     });
                   }}
                 />
-                <label htmlFor="checkbox2" className="input-label">
+                <label htmlFor="checkbox2" className={styles["input-label"]}>
                   Option 2
                 </label>
               </div>

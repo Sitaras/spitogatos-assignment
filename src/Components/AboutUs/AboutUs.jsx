@@ -1,14 +1,15 @@
 import React from "react";
-import "./AboutUs.css";
 import Picture1 from "../../assets/Picture1.png";
 import Picture2 from "../../assets/Picture2.png";
 
+import styles from "./AboutUs.module.css";
+
 function AboutUs() {
   return (
-    <section id="aboutus" className="autoScreens">
-      <div className="containerAboutUs">
-        <img src={Picture1} alt="photoshooter" className="photo1" />
-        <div className="textBlockColumn1">
+    <section id="aboutus" className={styles.aboutUsSection}>
+      <div className={styles.containerAboutUs}>
+        <img src={Picture1} alt="photoshooter" className={styles.photo1} />
+        <div className={styles.textBlockColumn1}>
           <h4>Since the 1500s</h4>
           <h2>The standard</h2>
           <p>
@@ -21,7 +22,7 @@ function AboutUs() {
             culpa qui officia deserunt.
           </p>
         </div>
-        <div className="textBlockColumn2">
+        <div className={styles.textBlockColumn2}>
           <h4>Since the 1500s</h4>
           <h2>The standard</h2>
           <p>
@@ -30,7 +31,7 @@ function AboutUs() {
           </p>
           <button className="searchBtn">Search</button>
         </div>
-        <img src={Picture2} alt="photoshooter" className="photo2" />
+        <img src={Picture2} alt="photoshooter" className={styles.photo2} />
       </div>
     </section>
   );
